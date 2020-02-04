@@ -1,0 +1,119 @@
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage[all]{xy}
+\usepackage{tikz-cd}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage[capitalize,nameinlink]{cleveref}
+
+\crefname{equation}{}{}
+
+%% Better defaults.
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\emptyset}{\varnothing}
+
+%% Delimiters.
+\DeclarePairedDelimiter{\parens}{\lparen}{\rparen}
+\DeclarePairedDelimiter{\brackets}{[}{]}
+\DeclarePairedDelimiter{\angles}{\langle}{\rangle}
+
+%% Math general.
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\inv}[1]{{#1}^{-1}}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+%% Set theory.
+\DeclarePairedDelimiter{\set}{\{}{\}}
+\DeclarePairedDelimiterX{\setbuilder}[2]{\{}{\}}{{#1}\,\middle|\,{#2}}
+\DeclarePairedDelimiterX{\semicolonsetbuilder}[2]{\{}{\}}{{#1}\,;\,{#2}}
+\newcommand{\cardinality}{\abs}
+\newcommand{\powerset}{\mathcal{P}}
+
+%% Various sets.
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\integersgezero}{\integers_{\ge 0}}
+\newcommand{\integersgtzero}{\integers_{> 0}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\realsnezero}{\reals_{\ne 0}}
+\newcommand{\realsgezero}{\reals_{\ge 0}}
+\newcommand{\realsgtzero}{\reals_{> 0}}
+\newcommand{\euclidean}{\mathbb{E}}
+\newcommand{\complexes}{\mathbb{C}}
+
+%% Number theory.
+\newcommand{\divides}{\mid}
+\newcommand{\ndivides}{\nmid}
+\newcommand{\coprime}{\perp}
+\DeclareMathOperator{\lcm}{lcm}
+
+%% Analysis.
+\DeclareMathOperator{\lub}{lub}
+\DeclareMathOperator{\glb}{glb}
+\newcommand{\intd}[1]{\,d{#1}}
+\newcommand{\conjugate}[1]{\overline{#1}}
+\newcommand{\jacobian}{J}
+\newcommand{\Schwarzian}{\text{S}}
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\newcommand{\modulus}{\abs}
+\newcommand{\rootsofunity}[1]{\mu_{#1}}
+
+%% Algebra.
+\DeclareMathOperator{\End}{End}
+\newcommand{\algcenter}{Z}
+\DeclareMathOperator{\matrices}{M}
+\newcommand{\ZmodZ}[1]{\integers/{#1}\integers}
+\DeclareMathOperator{\rchar}{char}
+\newcommand{\order}[1]{\abs{#1}}
+\newcommand{\generate}[1]{\angles{#1}}
+\newcommand{\units}[1]{{#1}^{\times}}
+\newcommand{\genideal}[1]{\parens*{#1}}
+\DeclarePairedDelimiterX{\idealbuilder}[2]{\(}{\)}{{#1}\,\middle|\,{#2}}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\kernel}{ker}
+\newcommand{\localize}[2]{\inv{#2}{#1}}
+\newcommand{\localizecomplement}[2]{{#1}_{#2}}
+\newcommand{\isoto}{\xrightarrow{\sim}}
+
+%% Linear algebra.
+\newcommand{\phm}{\phantom{-}}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclareMathOperator{\nul}{nul}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\linspan}{span}
+\newcommand{\inprod}[2]{\angles{#1,#2}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\proj}{proj}
+\newcommand{\normalized}[1]{\hat{#1}}
+\newcommand{\spectrum}{\sigma}
+
+%% Combinatorics.
+\newcommand{\falling}[1]{^{\underline{#1}}}
+\newcommand{\qbinom}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}_q}
+\newcommand{\ogf}{\xleftrightarrow{\text{ogf}}}
+\newcommand{\egf}{\xleftrightarrow{\text{egf}}}
+\DeclareMathOperator{\invn}{inv}
+\DeclareMathOperator{\majn}{maj}
+\DeclareMathOperator{\desn}{des}
+\DeclareMathOperator{\excn}{exc}
+\DeclareMathOperator{\wexcn}{wexc}
+
+%% Dynamical systems.
+\newcommand{\basin}{W^s}
+\DeclareMathOperator{\Per}{Per}
+
+%% Topology.
+\newcommand{\closure}{\overline}
+\newcommand{\limitset}{'}
+\newcommand{\cone}{\text{C}}
+\newcommand{\onepointcompactification}[1]{{#1}^*}

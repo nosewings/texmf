@@ -1,0 +1,46 @@
+\documentclass[a4paper,oneside,12pt,reqno]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage[parfill]{parskip}
+
+\newcommand{\problem}[1]{\textit{#1}}
+\newcommand{\solution}{\textbf{Solution.} }
+
+\usepackage{enumitem}
+
+\input{mathstuff_core.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem*{remark*}{Remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General formatting.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Stop LaTeX from breaking math expressions when reasonably possible.
+\binoppenalty=9999
+\relpenalty=9999
+
+%% Allow breaks in long equation chains.
+\allowdisplaybreaks
+
+%% Make the date appear at the top.
+\makeatletter
+\patchcmd{\@maketitle}
+{\ifx\@empty\@dedicatory}
+{\ifx\@empty\@date \else {\vskip3ex \centering\footnotesize\@date\par\vskip1ex}\fi
+  \ifx\@empty\@dedicatory}
+{}{}
+\patchcmd{\@adminfootnotes}
+{\ifx\@empty\@date\else \@footnotetext{\@setdate}\fi}
+{}{}{}
+\makeatother
+
+\pagestyle{plain}
