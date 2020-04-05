@@ -2,6 +2,7 @@
 \usepackage{gensymb}
 \usepackage{mathtools}
 \usepackage{mathrsfs}
+\usepackage{commath}
 \usepackage[all]{xy}
 \usepackage{tikz-cd}
 \usepackage{etoolbox}
@@ -9,6 +10,11 @@
 \usepackage[capitalize,nameinlink]{cleveref}
 
 \crefname{equation}{}{}
+
+% TODO: these commands are in commath; evaluate whether we want them.
+\let\abs\relax
+\let\set\relax
+\let\norm\relax
 
 %% Better defaults.
 \renewcommand{\epsilon}{\varepsilon}
@@ -32,6 +38,7 @@
 %% Set theory.
 \DeclarePairedDelimiter{\set}{\{}{\}}
 \DeclarePairedDelimiterX{\setbuilder}[2]{\{}{\}}{{#1}\,\middle|\,{#2}}
+\DeclarePairedDelimiterX{\colonsetbuilder}[2]{\{}{\}}{{#1}\,:\,{#2}}
 \DeclarePairedDelimiterX{\semicolonsetbuilder}[2]{\{}{\}}{{#1}\,;\,{#2}}
 \newcommand{\cardinality}{\abs}
 \newcommand{\powerset}{\mathcal{P}}
@@ -54,12 +61,14 @@
 \newcommand{\ndivides}{\nmid}
 \newcommand{\coprime}{\perp}
 \DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\sgn}{sgn}
 
 %% Analysis.
 \DeclareMathOperator{\lub}{lub}
 \DeclareMathOperator{\glb}{glb}
 \newcommand{\intd}[1]{\,d{#1}}
 \newcommand{\conjugate}[1]{\overline{#1}}
+\newcommand{\gradient}{\nabla}
 \newcommand{\jacobian}{J}
 \newcommand{\Schwarzian}{\text{S}}
 \let\Re\relax
@@ -68,6 +77,9 @@
 \DeclareMathOperator{\Im}{Im}
 \newcommand{\modulus}{\abs}
 \newcommand{\rootsofunity}[1]{\mu_{#1}}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Tan}{Tan}
 
 %% Algebra.
 \DeclareMathOperator{\End}{End}
@@ -100,6 +112,7 @@
 
 %% Combinatorics.
 \newcommand{\falling}[1]{^{\underline{#1}}}
+\newcommand{\rising}[1]{^{\overline{#1}}}
 \newcommand{\qbinom}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}_q}
 \newcommand{\ogf}{\xleftrightarrow{\text{ogf}}}
 \newcommand{\egf}{\xleftrightarrow{\text{egf}}}
@@ -120,6 +133,9 @@
 \newcommand{\onepointcompactification}[1]{{#1}^*}
 
 %% Geometry (probably temporary)
+\newcommand{\geomline}{\overleftrightarrow}
 \newcommand{\geombetween}[3]{{#1}*{#2}*{#3}}
-\newcommand{\geomrray}[1]{\overrightarrow{{#1}}}
-\newcommand{\geomline}[1]{\overleftrightarrow{{#1}}}
+\newcommand{\geombetweenfour}[4]{{#1}*{#2}*{#3}*{#4}}
+\newcommand{\geomrray}{\overrightarrow}
+\newcommand{\geomsegment}{\overline}
+\newcommand{\geomanglemeasure}{\mu}
